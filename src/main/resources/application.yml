@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    platform: h2
+  h2:
+    console:
+      enabled: true
+      path: /h2console
+  jackson.serialization.indent_output: true
+
+roox.security.jwt:
+  tokenSignKey: xCaLzuKMHUGy3ZkQxnVqhj8LWkxDg3qq
+  tokenIssuer: http://roox.ru
+  tokenExpSec: 600
+  refreshTokenExpSec: 1800
+
+security:
+  ignored: /h2console/**, /javadoc/**, /restdoc.html
